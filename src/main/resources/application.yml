@@ -25,6 +25,11 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+      routes:
+        - id: microservice-one
+          uri: lb:http://MICROSERVICE-ONE
+          predicates:
+            - Path=/**
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors: ## CORS Configuration
