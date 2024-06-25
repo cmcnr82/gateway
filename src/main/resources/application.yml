@@ -26,14 +26,14 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: microservice
+        - id: microservice-hello
           uri: lb:http://MICROSERVICE
           predicates:
-            - Path=/hello/**
-        - id: microservice
+            - Path=/hello
+        - id: microservice-bye
           uri: lb:http://MICROSERVICE
           predicates:
-              - Path=/bye/**
+              - Path=/bye
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors: ## CORS Configuration
