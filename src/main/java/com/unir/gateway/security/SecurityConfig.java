@@ -16,7 +16,10 @@ public class SecurityConfig {
         serverHttpSecurity
                 .csrf(csrf -> csrf.disable())
                 .authorizeExchange(exchange -> exchange
-                        .pathMatchers("/eureka/**")
+                        .pathMatchers(
+                                "/eureka/**",
+                                "/bye"
+                        )
                         .permitAll()
                         .anyExchange()
                         .authenticated()

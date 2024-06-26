@@ -23,7 +23,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${keycloak.KC_HOSTNAME}/realms/micro-services
+          issuer-uri: ${ISSUER_URI}
+          #issuer-uri: ${keycloak.KC_HOSTNAME}/realms/micro-services
   cloud:
     gateway:
       discovery:
