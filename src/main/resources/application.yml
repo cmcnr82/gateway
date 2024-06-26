@@ -18,7 +18,12 @@ eureka:
 ## lower-case-service-id is mandatory, otherwise is retrieved in upper case from Eureka
 spring:
   application:
-    name: gateway    
+    name: gateway
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${keycloak.KC_HOSTNAME}/realms/micro-services
   cloud:
     gateway:
       discovery:
@@ -34,6 +39,10 @@ spring:
           uri: lb:http://MICROSERVICE
           predicates:
               - Path=/bye
+        - id: eureka
+          uri: lb:http://Eureka
+          predicates:
+            - Path=/eureka/**
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors: ## CORS Configuration
