@@ -15,7 +15,7 @@ eureka:
       
 
 ## Enable service discovery (with Eureka)
-## lower-case-service-id is mandatory, otherwise is retrieved in upper case from Eureka
+## lower-case-service-id is mandatory, otherwise is retrieved in upper case from  Eureka
 spring:
   application:
     name: gateway
